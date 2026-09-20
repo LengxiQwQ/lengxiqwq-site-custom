@@ -964,6 +964,7 @@ const Guestbook = ({ darkMode, hue, t, lang }) => {
                     window.twikoo.init({
                         envId: TWIKOO_ENV_ID,
                         el: '#tcomment',
+                        path: '/guestbook',
                     }).then(() => {
                         setStatus('success');
                         
