@@ -160,7 +160,7 @@ const translations = {
     nav: {
       home: '首页',
       home_station: '冷汐的小站',
-      home_nest: '冷汐的次元小窝',
+      home_nest: '冷汐的杂货铺',
       daily: '日常',
       projects: '项目',
       articles: '文章',
@@ -725,7 +725,7 @@ const ProfileCardPro = ({ darkMode, hue, t }) => (
           <div className="my-1 border-t border-dashed border-gray-100 dark:border-gray-800"></div>
 
           <InfoRow icon={<QQIcon size={16} />} value="3197635836" isCopyable={true} hue={hue} darkMode={darkMode} />
-          <InfoRow icon={<Mail size={14} />} value="date200325@gmail.com" isCopyable={true} hue={hue} darkMode={darkMode} />
+          <InfoRow icon={<Mail size={14} />} value="lengxi@lengxiqwq.com" isCopyable={true} hue={hue} darkMode={darkMode} />
       </div>
 
       {/* 社交图标：justify-between, w-8 h-8, icon size 16 */}
@@ -1426,7 +1426,7 @@ const LinksView = ({ hue, darkMode, t }) => {
     const [copied, setCopied] = useState(false);
 
     const handleEmailClick = () => {
-        const email = "date200325@gmail.com";
+        const email = "lengxi@lengxiqwq.com";
         navigator.clipboard.writeText(email);
         setCopied(true);
         setTimeout(() => setCopied(false), 2500);
@@ -1647,13 +1647,15 @@ const Navbar = ({
                           <Check size={14} className="text-blue-500" />
                       </div>
                       
-                      {/* Static Nest Item (Renamed, Disabled Link, No Check) */}
-                      <div 
-                          className={`w-full text-left px-4 py-3 rounded-lg text-sm transition-colors flex justify-between items-center cursor-not-allowed opacity-60 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}
-                          title="Coming Soon"
+                      {/* Store / Nest Link Item */}
+                      <a 
+                          href="https://lengxiqwq.com/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`w-full text-left px-4 py-3 rounded-lg text-sm transition-colors flex justify-between items-center cursor-pointer ${darkMode ? 'text-gray-300 hover:bg-white/5 hover:text-white' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}
                       >
                           {t('nav.home_nest')}
-                      </div>
+                      </a>
                   </div>
               </div>
           </div>
@@ -1811,7 +1813,14 @@ const Navbar = ({
                ))}
                <div className="border-t my-2 border-gray-200 dark:border-gray-700"></div>
                <button className="p-3 text-sm text-gray-500 flex justify-between cursor-default">{t('nav.home_station')} <Check size={14} className="text-blue-500"/></button>
-               <button className="p-3 text-sm text-gray-400 flex justify-between cursor-not-allowed">{t('nav.home_nest')}</button>
+               <a 
+                   href="https://lengxiqwq.com/" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   className="p-3 text-sm text-gray-600 dark:text-gray-300 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg flex justify-between items-center transition-colors"
+               >
+                   {t('nav.home_nest')}
+               </a>
           </div>
       )}
     </nav>
